@@ -17,12 +17,26 @@
 </head>
 
 <body>
+
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
     <div id='calendar'></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
+                initialView: 'dayGridMonth',
+                // this is for language
+                locale:"es",
+                headerToolbar:{
+                    left:'prev,next,today',
+                    center:'title',
+                    right:'dayGridMonth, timeGridWeek, timeGridDay'
+                }
             });
             calendar.render();
         });
